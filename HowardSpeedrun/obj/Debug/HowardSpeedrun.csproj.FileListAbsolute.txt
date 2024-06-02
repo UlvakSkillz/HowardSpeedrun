@@ -1,4 +1,3 @@
-C:\Users\austi\source\repos\HowardSpeedrun\HowardSpeedrun\obj\Debug\HowardSpeedrun.csproj.AssemblyReference.cache
 C:\Users\austi\source\repos\HowardSpeedrun\HowardSpeedrun\obj\Debug\HowardSpeedrun.csproj.CoreCompileInputs.cache
 C:\Users\austi\source\repos\HowardSpeedrun\HowardSpeedrun\bin\Debug\HowardSpeedrun.dll
 C:\Users\austi\source\repos\HowardSpeedrun\HowardSpeedrun\bin\Debug\HowardSpeedrun.pdb
@@ -123,3 +122,4 @@ C:\Users\austi\source\repos\HowardSpeedrun\HowardSpeedrun\bin\Debug\MelonLoader.
 C:\Users\austi\source\repos\HowardSpeedrun\HowardSpeedrun\obj\Debug\HowardSpeedrun.csproj.CopyComplete
 C:\Users\austi\source\repos\HowardSpeedrun\HowardSpeedrun\obj\Debug\HowardSpeedrun.dll
 C:\Users\austi\source\repos\HowardSpeedrun\HowardSpeedrun\obj\Debug\HowardSpeedrun.pdb
+C:\Users\austi\source\repos\HowardSpeedrun\HowardSpeedrun\obj\Debug\HowardSpeedrun.csproj.AssemblyReference.cache

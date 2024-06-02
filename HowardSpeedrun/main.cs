@@ -10,33 +10,29 @@ namespace HowardSpeedrun
 {
     public class main : MelonMod
     {
-        [HarmonyPatch(typeof(Howard), "OnActivationLeverChanged")]
+        [HarmonyPatch(typeof(RUMBLE.Environment.Howard.Howard), "OnActivationLeverChanged")]
         public static class Patch0
         {
             private static void Postfix(int step)
             {
                 if (step == 0)
                 {
-                    main.howardActive = true;
-                    main.timer.Restart();
+                    howardActive = true;
+                    howard.currentHp = howard.CurrentSelectedLogic.maxHealth;
+                    howard.UpdateHealthBarPercentage(100, false);
+                    timer.Restart();
                 }
                 else if (step == 1)
                 {
-                    main.howardActive = false;
-                    main.timer.Stop();
-                    main.timerTimeComponent.text = timer.Elapsed.ToString();
+                    howardActive = false;
+                    timer.Stop();
+                    timerTimeComponent.text = timer.Elapsed.ToString();
                 }
             }
         }
 
-        [HarmonyPatch(typeof(Howard), "DealDamage")]
-        public static class Patch1
-        {
-            private static void Postfix()
-            {
-                if (main.howard.currentHp == 0) { howard.OnActivationLeverChanged(1); }
-            }
-        }
+        [HarmonyPatch(typeof(RUMBLE.Environment.Howard.Howard), "DealDamage")]
+        public static class Patch1 { private static void Postfix() { if (howard.currentHp <= 0) { howard.OnActivationLeverChanged(1); } } }
 
         private string currentScene = "Loader";
         private bool sceneChanged = false;
@@ -86,8 +82,7 @@ namespace HowardSpeedrun
                     timerGameObject.transform.rotation = Quaternion.Euler(0, 133.5728f, 0);
                     loaded = true;
                     sceneChanged = false;
-                }
-                catch { return; }
+                } catch { return; }
             }
             if (loaded && howardActive) { timerTimeComponent.text = timer.Elapsed.ToString(); }
         }
