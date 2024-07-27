@@ -1,16 +1,16 @@
 ﻿using HarmonyLib;
 using MelonLoader;
-using RUMBLE.Environment.Howard;
+using Il2CppRUMBLE.Environment.Howard;
 using RumbleModdingAPI;
 using System.Diagnostics;
-using TMPro;
+using Il2CppTMPro;
 using UnityEngine;
 
 namespace HowardSpeedrun
 {
     public class main : MelonMod
     {
-        [HarmonyPatch(typeof(RUMBLE.Environment.Howard.Howard), "OnActivationLeverChanged")]
+        [HarmonyPatch(typeof(Il2CppRUMBLE.Environment.Howard.Howard), "OnActivationLeverChanged")]
         public static class Patch0
         {
             private static void Postfix(int step)
@@ -31,7 +31,7 @@ namespace HowardSpeedrun
             }
         }
 
-        [HarmonyPatch(typeof(RUMBLE.Environment.Howard.Howard), "DealDamage")]
+        [HarmonyPatch(typeof(Il2CppRUMBLE.Environment.Howard.Howard), "DealDamage")]
         public static class Patch1 { private static void Postfix() { if (howard.currentHp <= 0) { howard.OnActivationLeverChanged(1); } } }
 
         private string currentScene = "Loader";
