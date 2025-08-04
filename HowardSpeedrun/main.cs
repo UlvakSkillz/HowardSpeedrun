@@ -57,10 +57,10 @@ namespace HowardSpeedrun
             {
                 try
                 {
-                    howard = Calls.GameObjects.Gym.Logic.HeinhouserProducts.HowardRoot.GetGameObject().GetComponent<Howard>();
+                    howard = Calls.GameObjects.Gym.LOGIC.Heinhouserproducts.Howardroot.GetGameObject().GetComponent<Howard>();
                     timerGameObject = new GameObject();
                     timerGameObject.name = "HowardTimer";
-                    timerTextStatic = GameObject.Instantiate(Calls.GameObjects.Gym.Logic.HeinhouserProducts.Leaderboard.PlayerTags.HighscoreTag0.Nr.GetGameObject());
+                    timerTextStatic = GameObject.Instantiate(Calls.GameObjects.Gym.LOGIC.Heinhouserproducts.Leaderboard.PlayerTags.HighscoreTag.Nr.GetGameObject());
                     timerTextStatic.transform.parent = timerGameObject.transform;
                     timerTextStatic.name = "TimerText";
                     timerTextComponent = timerTextStatic.GetComponent<TextMeshPro>();
